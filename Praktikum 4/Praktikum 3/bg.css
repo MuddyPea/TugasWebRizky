@@ -1,0 +1,153 @@
+*,
+*::before,
+*::after{
+box-sizing: border-box;
+}
+
+html{
+    color-scheme: dark ;
+}
+
+body{
+    font-family: system-ui;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.kegi{
+    flex: 1;
+}
+
+.konten{
+    display: flex;
+}
+
+.wrapper{
+    max-width: 50rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+.judul{
+        color: #0501f0;
+        font-size: 48px;
+        font-family: 'Arial', sans-serif;
+        text-shadow: 0 0 5px #fff,
+                     0 0 10px #fff,
+                     0 0 15px #fff,
+                     0 0 20px #ff00de,
+                     0 0 30px #ff00de,
+                     0 0 40px #921281,
+                     0 0 55px #ff0015,
+                     0 0 75px #ff00de;
+    text-align: center;
+}
+
+.site-section{
+    font-size: 2.25rem;
+}
+
+section{
+    padding-block: 5rem;
+}
+
+.diagonal{
+    --skew-angle: -5deg;
+    --background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+    position: relative;
+    color: black;
+    isolation: isolate;
+}
+
+.diagonal::after{
+    content: '';
+    background-image: var(--background);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transform: skewY(var(--skew-angle));
+}
+
+.spikes{
+    position: relative;
+    isolation: isolate;
+    color: black;
+    --skew-angle: 5deg;
+    --background: linear-gradient(50deg, #fdc830, #f37345);
+}
+
+
+.spikes::after{
+    content: '';
+    background-image: var(--background);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transform: skewY(var(--skew-angle));
+}
+
+.cube{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        transform: rotateX(-30deg) rotateY(0deg);
+    }
+    100%{
+        transform: rotateX(-30deg) rotateY(360deg);
+    }
+}
+
+.cube div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.cube div span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#151515,#00ec00);
+    transform: rotateY(calc(90deg * var(--i))) translateZ(100px);
+}
+
+.top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background: #222;
+    transform: rotateX(90deg) translateZ(100px) ;
+}
+
+.top::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background: #0f0;
+    transform: translateZ(-280px);   
+    filter: blur(20px);
+    box-shadow: rgba(0, 255, 0, 0.2),
+    0 0 200px rgba(0, 255, 0, 0.4),
+    0 0 300px rgba(0, 255, 0, 0.6),
+    0 0 400px rgba(0, 255, 0, 0.8),
+    0 0 500px rgba(0, 255, 0.1);
+
+}
+

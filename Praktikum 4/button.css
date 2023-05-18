@@ -1,0 +1,14 @@
+*
+    button {
+        background-color: #7121a0; /* warna background */
+        border: none;
+        color: white; /* warna teks */
+        padding: 15px 32px; /* ukuran tombol */
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 50%; /* membuat tombol menjadi lingkaran */
+      }
